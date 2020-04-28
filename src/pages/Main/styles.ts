@@ -12,12 +12,26 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+`
+
+export const Title = styled.h1`
+  margin-bottom: 40px;
+`
+
+export const BoxContainer = styled.div`
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
 `
 
 export const Box = styled.div<BorderProps>`
-  width: 500px;
-  height: 500px;
-  background: #f74834;
+  width: 100%;
+  padding-top: 100%;
+  background: #993399;
   margin-bottom: 50px;
 
   ${(props) =>
@@ -47,4 +61,17 @@ export const Box = styled.div<BorderProps>`
 
 export const Button = styled.button`
   margin-top: 20px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0;
+  background: #993399;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+`
+
+export const Copied = styled.span`
+  font-size: 14px;
+  color: #993399;
+  margin-top: 10px;
 `

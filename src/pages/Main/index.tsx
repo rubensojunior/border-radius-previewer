@@ -3,9 +3,10 @@ import React, { useState, useCallback } from 'react'
 import copy from 'clipboard-copy'
 import Input from '../../components/Input'
 
-import { Container, Box, Button } from './styles'
+import { Container, Title, BoxContainer, Box, Button, Copied } from './styles'
 
 const App: React.FC = () => {
+  const [copied, setCopied] = useState(false)
   const [borderTopLeft, setBorderTopLeft] = useState(0)
   const [borderTopRight, setBorderTopRight] = useState(0)
   const [borderBottomLeft, setBorderBottomLeft] = useState(0)
@@ -36,6 +37,12 @@ const App: React.FC = () => {
   }, [])
 
   const handleCopyButtonClick = useCallback(async () => {
+    setCopied(true)
+
+    setTimeout(() => {
+      setCopied(false)
+    }, 3000)
+
     const resultCss = `
     ${borderTopLeft > 0 ? `border-top-left-radius: ${borderTopLeft}px;` : ''}
     ${borderTopRight > 0 ? `border-top-right-radius: ${borderTopRight}px;` : ''}
@@ -56,12 +63,16 @@ const App: React.FC = () => {
 
   return (
     <Container>
-      <Box
-        borderTopLeft={borderTopLeft}
-        borderTopRight={borderTopRight}
-        borderBottomLeft={borderBottomLeft}
-        borderBottomRight={borderBottomRight}
-      />
+      <Title>Border Radius Previewer</Title>
+
+      <BoxContainer>
+        <Box
+          borderTopLeft={borderTopLeft}
+          borderTopRight={borderTopRight}
+          borderBottomLeft={borderBottomLeft}
+          borderBottomRight={borderBottomRight}
+        />
+      </BoxContainer>
 
       <Input
         onChange={(event) => handleInputTopLeftChange(event)}
@@ -87,6 +98,8 @@ const App: React.FC = () => {
       <Button type="button" onClick={handleCopyButtonClick}>
         Copy to clipboard
       </Button>
+
+      {copied && <Copied>Copied to clipboard!</Copied>}
     </Container>
   )
 }

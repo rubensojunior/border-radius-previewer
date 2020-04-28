@@ -5,12 +5,12 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  background: #232129;
+  background: #fff;
   border-radius: 10px;
   padding: 16px;
   width: 100%;
 
-  border: 2px solid #232129;
+  border: 2px solid #777;
   color: #666360;
 
   display: flex;
@@ -23,15 +23,15 @@ export const Container = styled.div<ContainerProps>`
   ${(props) =>
     props.isFocused &&
     css`
-      color: #20c997;
-      border-color: #20c997;
+      color: #993399;
+      border-color: #993399;
     `}
 
   input {
     flex: 1;
     background: transparent;
     border: 0;
-    color: #f4ede8;
+    color: #333333;
 
     &::placeholder {
       color: #666360;
