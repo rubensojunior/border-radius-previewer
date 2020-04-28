@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface BorderProps {
+  borderTopLeft: number
+}
 
 export const Container = styled.div`
   display: flex;
@@ -7,9 +11,15 @@ export const Container = styled.div`
   justify-content: center;
 `
 
-export const Box = styled.div`
+export const Box = styled.div<BorderProps>`
   width: 500px;
   height: 500px;
   background: #f74834;
   margin-bottom: 50px;
+
+  ${(props) =>
+    props.borderTopLeft &&
+    css`
+      border-top-left-radius: ${props.borderTopLeft}px;
+    `}
 `
