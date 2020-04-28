@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react'
 
+import copy from 'clipboard-copy'
 import Input from '../../components/Input'
 
-import { Container, Box } from './styles'
+import { Container, Box, Button } from './styles'
 
 const App: React.FC = () => {
   const [borderTopLeft, setBorderTopLeft] = useState(0)
@@ -34,6 +35,25 @@ const App: React.FC = () => {
     setBorderBottomRight(borderBottomRightValue)
   }, [])
 
+  const handleCopyButtonClick = useCallback(async () => {
+    const resultCss = `
+    ${borderTopLeft > 0 ? `border-top-left-radius: ${borderTopLeft}px;` : ''}
+    ${borderTopRight > 0 ? `border-top-right-radius: ${borderTopRight}px;` : ''}
+    ${
+      borderBottomLeft > 0
+        ? `border-bottom-left-radius: ${borderBottomLeft}px;`
+        : ''
+    }
+    ${
+      borderBottomRight > 0
+        ? `border-bottom-right-radius: ${borderBottomRight}px;`
+        : ''
+    }
+    `
+
+    await copy(resultCss)
+  }, [borderTopLeft, borderTopRight, borderBottomLeft, borderBottomRight])
+
   return (
     <Container>
       <Box
@@ -63,6 +83,10 @@ const App: React.FC = () => {
         value={borderBottomRight}
         type="number"
       />
+
+      <Button type="button" onClick={handleCopyButtonClick}>
+        Copy to clipboard
+      </Button>
     </Container>
   )
 }

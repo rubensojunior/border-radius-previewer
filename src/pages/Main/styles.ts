@@ -44,3 +44,7 @@ export const Box = styled.div<BorderProps>`
       border-bottom-right-radius: ${props.borderBottomRight}px;
     `}
 `
+
+export const Button = styled.button`
+  margin-top: 20px;
+`
