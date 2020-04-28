@@ -2,6 +2,9 @@ import styled, { css } from 'styled-components'
 
 interface BorderProps {
   borderTopLeft: number
+  borderTopRight: number
+  borderBottomLeft: number
+  borderBottomRight: number
 }
 
 export const Container = styled.div`
@@ -21,5 +24,23 @@ export const Box = styled.div<BorderProps>`
     props.borderTopLeft &&
     css`
       border-top-left-radius: ${props.borderTopLeft}px;
+    `}
+
+  ${(props) =>
+    props.borderTopRight &&
+    css`
+      border-top-right-radius: ${props.borderTopRight}px;
+    `}
+
+  ${(props) =>
+    props.borderBottomLeft &&
+    css`
+      border-bottom-left-radius: ${props.borderBottomLeft}px;
+    `}
+
+  ${(props) =>
+    props.borderBottomRight &&
+    css`
+      border-bottom-right-radius: ${props.borderBottomRight}px;
     `}
 `
