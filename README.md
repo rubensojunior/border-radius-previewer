@@ -18,10 +18,6 @@ Border Radius Previewer
 
 <hr />
 
-## API
-
-This project connects with github API.
-
 ## Features
 
 - Change 4 border-radius values and see changes.
