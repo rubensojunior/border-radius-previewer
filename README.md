@@ -1,30 +1,44 @@
-<h3 align="center">
-  Challenge: Border Radius Previewer
-</h3>
+<h1 align="center">
+<br>
+Border Radius Previewer
+</h1>
+
+<p align="center">This project was created to explore border-radius css.</p>
 
 <p align="center">
-  <a href="#pencil-about-challenge">About Challenge</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">License</a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
 </p>
 
-## :pencil: About Challenge
+<div>
+  <img src="repo/imgs/image1.png" alt="demo" height="425">
+  <img src="repo/imgs/image2.png" alt="demo" height="425">
+</div>
 
-The border-radius property can have multiple values changed. Preview how the shape looks while changing these values.
+<hr />
 
-## Screens
+## API
 
-![Screen](repo/imgs/border-radius-previewer.PNG)
+This project connects with github API.
 
-## User Stories
+## Features
 
-- [x] ~User can see a box which has a `border-radius` property applied to it
-- [x] ~User can change the 4 `border-radius` values that are applied to the box (top-left, top-right, bottom-left, bottom-right)
-- [x] ~User can copy the resulting CSS to the clipboard
+- Change 4 border-radius values and see changes.
+- Copy to clipboard the resulting css.
 
-## :memo: Licença
+- ⚛️ **React Js** — A JavaScript library for building user interfaces
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+## Getting started
+
+- Clone project > enter the project folder
+- run `yarn`
+- run `yarn start`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
 
 ---
 
-Made by me 👨🏻‍💻
+Created with passion by me 👨🏻‍💻
